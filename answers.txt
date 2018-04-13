@@ -1,0 +1,53 @@
+- remove duplicates in a query response
+
+tour.select(city).distinct
+
+SELECT DISTINCT city
+FROM tour;
+
+- filter records using inequalities, pattern matching, ranges, and boolean logic
+
+fruit.where('weight' > 10)
+
+SELECT type
+FROM fruit
+WHERE weight > 10;
+
+- sort records in a particular order
+
+books.order('author')
+
+SELECT title, author
+FROM books
+ORDER BY author;
+
+- limit the number of records returned
+
+comments.limit(3)
+
+SELECT *
+FROM comments
+LIMIT 3;
+
+- group records into sections
+
+people.group(country).avg
+
+SELECT AVG(age)
+FROM people
+GROUP BY country;
+
+- perform calculations using aggregate functions
+
+inventory.average(quantity)
+
+SELECT SUM(quantity)
+FROM inventory
+
+- join tables using cross join, inner join, and outer join
+
+user.joins(post)
+
+SELECT user.name, post.text
+FROM user
+JOIN post ON post.user_id = user.id
